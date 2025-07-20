@@ -1,11 +1,9 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 import { join } from 'path';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { AppResolver } from './app.resolver';
-import { UserResolver } from './user.resolver';
+import { HelloWorldModule } from './hello-world/hello-world.module';
 
 @Module({
   imports: [
@@ -13,11 +11,12 @@ import { UserResolver } from './user.resolver';
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'backend/src/schema.gql'),
       sortSchema: true,
-      playground: true,
+      playground: false,
       introspection: true,
+      plugins: [ApolloServerPluginLandingPageLocalDefault()],
     }),
+    HelloWorldModule,
   ],
-  controllers: [AppController],
-  providers: [AppService, AppResolver, UserResolver],
+  providers: [],
 })
 export class AppModule {}

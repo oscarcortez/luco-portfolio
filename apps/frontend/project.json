@@ -1,0 +1,58 @@
+{
+  "name": "frontend",
+  "projectType": "application",
+  "root": "apps/frontend",
+  "sourceRoot": "apps/frontend/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/frontend",
+        "root": "apps/frontend",
+        "fileReplacements": []
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractCss": true,
+          "fileReplacements": []
+        },
+        "development": {
+          "optimization": false,
+          "extractCss": false,
+          "fileReplacements": []
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "options": {
+        "buildTarget": "frontend:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "frontend:build:production"
+        },
+        "development": {
+          "buildTarget": "frontend:build:development"
+        }
+      }
+    },
+    "dev": {
+      "executor": "@nx/next:dev-server",
+      "options": {
+        "buildTarget": "frontend:build"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "frontend:build:production"
+        },
+        "development": {
+          "buildTarget": "frontend:build:development"
+        }
+      }
+    }
+  },
+  "tags": []
+}

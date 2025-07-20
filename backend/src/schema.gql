@@ -2,35 +2,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-input CreateUserInput {
-  bio: String
-  email: String!
-  name: String!
-}
-
-type Mutation {
-  createMessage(message: String!): String!
-  createUser(createUserInput: CreateUserInput!): User!
-  deleteUser(id: ID!): Boolean!
-  updateUser(id: ID!, updateUserInput: UpdateUserInput!): User
-}
-
 type Query {
-  hello: String!
-  sayHello(name: String!): String!
-  user(id: ID!): User
-  users: [User!]!
-}
-
-input UpdateUserInput {
-  bio: String
-  email: String
-  name: String
-}
-
-type User {
-  bio: String
-  email: String!
-  id: ID!
-  name: String!
+  helloWorld(id: Int!): String!
 }
