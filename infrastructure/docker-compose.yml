@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: portfolio
+    container_name: portfolio_db
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
