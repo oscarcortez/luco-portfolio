@@ -5,6 +5,15 @@
   "references": [
     {
       "path": "./apps/frontend"
+    },
+    {
+      "path": "./backend-e2e"
+    },
+    {
+      "path": "./backend"
+    },
+    {
+      "path": "./shared-types"
     }
   ]
 }
