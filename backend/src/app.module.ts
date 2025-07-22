@@ -5,6 +5,7 @@ import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin
 import { join } from 'path';
 import { HelloWorldModule } from './hello-world/hello-world.module';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { UserModule } from './user/user.module';
     }),
     HelloWorldModule,
     UserModule,
+    AuthModule,
   ],
   providers: [],
 })

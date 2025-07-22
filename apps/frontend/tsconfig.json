@@ -1,10 +1,16 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "preserve",
+    "jsx": "preserve", // cambiado de "preserve" a "react-jsx"
     "noEmit": true,
     "emitDeclarationOnly": false,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "nodenext", // agregado
+    "module": "nodenext", // agregado
+    "target": "es2022", // agregado
+    "strict": true, // agregado
+    "skipLibCheck": true, // agregado
     "resolveJsonModule": true,
     "lib": [
       "dom",
@@ -12,7 +18,6 @@
       "esnext"
     ],
     "allowJs": true,
-    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "plugins": [
