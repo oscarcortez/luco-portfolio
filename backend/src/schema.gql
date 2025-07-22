@@ -290,6 +290,7 @@ type User {
   email: String!
   id: ID!
   name: String
+  password: String
   posts: [Post!]
   profile: Profile
 }
@@ -301,6 +302,7 @@ type UserCount {
 input UserCreateInput {
   email: String!
   name: String
+  password: String
   posts: PostCreateNestedManyWithoutAuthorInput
   profile: ProfileCreateNestedOneWithoutUserInput
 }
@@ -309,6 +311,7 @@ input UserOrderByWithRelationInput {
   email: SortOrder
   id: SortOrder
   name: SortOrderInput
+  password: SortOrderInput
   posts: PostOrderByRelationAggregateInput
   profile: ProfileOrderByWithRelationInput
 }
@@ -325,6 +328,7 @@ input UserWhereInput {
   email: StringFilter
   id: IntFilter
   name: StringNullableFilter
+  password: StringNullableFilter
   posts: PostListRelationFilter
   profile: ProfileNullableScalarRelationFilter
 }
@@ -336,6 +340,7 @@ input UserWhereUniqueInput {
   email: String
   id: Int
   name: StringNullableFilter
+  password: StringNullableFilter
   posts: PostListRelationFilter
   profile: ProfileNullableScalarRelationFilter
 }
