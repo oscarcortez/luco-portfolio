@@ -41,5 +41,8 @@
         }
       }
     }
+  },
+  "devDependencies": {
+    "prisma-nestjs-graphql": "^21.2.0"
   }
 }

@@ -6,7 +6,13 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  // output   = "../src/generated/prisma"
+}
+
+generator nestgraphql {
+  provider = "prisma-nestjs-graphql"
+  output   = "../src/generated/prisma-graphql"
+  reExport = Directories
 }
 
 datasource db {
