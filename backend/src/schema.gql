@@ -2,6 +2,10 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type AuthResponse {
+  access_token: String!
+}
+
 input BoolFilter {
   equals: Boolean
   not: NestedBoolFilter
@@ -36,6 +40,7 @@ input IntFilter {
 
 type Mutation {
   createUser(data: UserCreateInput!): User!
+  signIn(email: String!, password: String!): AuthResponse!
 }
 
 input NestedBoolFilter {

@@ -3,5 +3,6 @@ query GetUsers($where: UserWhereInput) {
     email
     id
     name
+    password
   }
 }

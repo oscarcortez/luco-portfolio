@@ -69,4 +69,8 @@ export class UserService {
       throw new Error('Failed to delete user');
     }
   }
+
+  async findByEmail(email: string): Promise<User | null> {
+    return this.prisma.user.findUnique({ where: { email } });
+  }
 }

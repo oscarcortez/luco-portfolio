@@ -10,11 +10,6 @@ import { UserCreateInput } from '../generated/prisma-graphql/user/user-create.in
 export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
-  // @Query(() => User, { name: 'user' })
-  // async getUser(@Args('id', { type: () => Int }) id: number): Promise<User | null> {
-  //   return this.userService.user({ id });
-  // }
-
   @Query(() => [User], { name: 'users' })
   async getUsers(
     @Args('skip', { type: () => Int, nullable: true }) skip?: number,

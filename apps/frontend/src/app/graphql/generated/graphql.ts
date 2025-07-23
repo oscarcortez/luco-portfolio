@@ -325,6 +325,7 @@ export type User = {
   email: Scalars['String']['output'];
   id: Scalars['ID']['output'];
   name?: Maybe<Scalars['String']['output']>;
+  password?: Maybe<Scalars['String']['output']>;
   posts?: Maybe<Array<Post>>;
   profile?: Maybe<Profile>;
 };
@@ -337,6 +338,7 @@ export type UserCount = {
 export type UserCreateInput = {
   email: Scalars['String']['input'];
   name?: InputMaybe<Scalars['String']['input']>;
+  password?: InputMaybe<Scalars['String']['input']>;
   posts?: InputMaybe<PostCreateNestedManyWithoutAuthorInput>;
   profile?: InputMaybe<ProfileCreateNestedOneWithoutUserInput>;
 };
@@ -345,6 +347,7 @@ export type UserOrderByWithRelationInput = {
   email?: InputMaybe<SortOrder>;
   id?: InputMaybe<SortOrder>;
   name?: InputMaybe<SortOrderInput>;
+  password?: InputMaybe<SortOrderInput>;
   posts?: InputMaybe<PostOrderByRelationAggregateInput>;
   profile?: InputMaybe<ProfileOrderByWithRelationInput>;
 };
@@ -361,6 +364,7 @@ export type UserWhereInput = {
   email?: InputMaybe<StringFilter>;
   id?: InputMaybe<IntFilter>;
   name?: InputMaybe<StringNullableFilter>;
+  password?: InputMaybe<StringNullableFilter>;
   posts?: InputMaybe<PostListRelationFilter>;
   profile?: InputMaybe<ProfileNullableScalarRelationFilter>;
 };
@@ -372,6 +376,7 @@ export type UserWhereUniqueInput = {
   email?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['Int']['input']>;
   name?: InputMaybe<StringNullableFilter>;
+  password?: InputMaybe<StringNullableFilter>;
   posts?: InputMaybe<PostListRelationFilter>;
   profile?: InputMaybe<ProfileNullableScalarRelationFilter>;
 };
@@ -381,7 +386,7 @@ export type GetUsersQueryVariables = Exact<{
 }>;
 
 
-export type GetUsersQuery = { __typename?: 'Query', users: Array<{ __typename?: 'User', email: string, id: string, name?: string | null }> };
+export type GetUsersQuery = { __typename?: 'Query', users: Array<{ __typename?: 'User', email: string, id: string, name?: string | null, password?: string | null }> };
 
 
 export const GetUsersDocument = gql`
@@ -390,6 +395,7 @@ export const GetUsersDocument = gql`
     email
     id
     name
+    password
   }
 }
     `;
